@@ -95,7 +95,20 @@ body {
 }
 
 .side-panel ul li {
-  position: relative;
+  position: relative; /* Ensure relative positioning for submenu */
+}
+
+.side-panel ul ul {
+  display: none;
+  position: absolute; /* Change to absolute positioning */
+  top: 0;
+  left: 100%; /* Position the submenu to the right of its parent */
+  background-color: #555; /* Adjust background color for submenus */
+  z-index: 999; /* Ensure submenus appear above other content */
+}
+
+.side-panel ul li:hover > ul {
+  display: block; /* Show submenu on parent hover */
 }
 
 .side-panel ul li:hover {
@@ -109,15 +122,6 @@ body {
   text-decoration: none;
 }
 
-.side-panel ul ul {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  background-color: #555; /* Adjust background color for submenus */
-  z-index: 999; /* Ensure submenus appear above other content */
-}
-
 .side-panel ul ul li:hover {
   background-color: #777; /* Adjust background color for submenu items on hover */
 }
@@ -126,16 +130,10 @@ body {
   color: #fff; /* Adjust text color for submenus */
 }
 
-.side-panel ul li:hover > ul {
-  display: block; /* Show submenu on hover */
-}
-
 /* Ensure content doesn't overlap with sidebar */
 #content {
   padding-left: 220px; /* Adjust to match expanded width of sidebar + some spacing */
 }
-
-/* Other existing CSS styles... */
 
 /* Hero section */
 .hero {
