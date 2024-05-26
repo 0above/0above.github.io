@@ -48,7 +48,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 60px; /* Adjust initial width */
+  width: 40px; /* Adjust the width of the sidebar navigation box */
   height: 100%;
   background-color: #333; /* Adjust background color as needed */
   z-index: 1000;
@@ -62,7 +62,17 @@ body {
 }
 
 /* Show text container for consistent layout */
+.side-panel a {
+  display: block;
+  padding: 12px;
+  color: #fff; /* Adjust text color as needed */
+  text-decoration: none;
+  position: relative; /* Ensure positioning context */
+}
+
 .side-panel a span {
+  display: inline-block;
+  width: 120px; /* Adjust width of text container */
   opacity: 0; /* Hide text by default */
   transition: opacity 0.3s ease; /* Add smooth transition for opacity change */
 }
@@ -70,6 +80,11 @@ body {
 /* Adjust the opacity of text container when sidebar is hovered */
 .side-panel:hover a span {
   opacity: 1; /* Show text when sidebar is hovered */
+}
+
+/* Completely hide text when sidebar is not fully expanded */
+.side-panel:not(:hover) a span {
+  opacity: 0; /* Hide text when sidebar is not fully expanded */
 }
 
 /* Styles for the navigation links */
@@ -100,6 +115,7 @@ body {
   top: 0;
   left: 100%;
   background-color: #555; /* Adjust background color for submenus */
+  z-index: 999; /* Ensure submenus appear above other content */
 }
 
 .side-panel ul ul li:hover {
