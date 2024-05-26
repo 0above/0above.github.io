@@ -47,23 +47,29 @@ body {
 .side-panel {
   position: fixed;
   top: 0;
-  left: -60px; /* Move sidebar off-screen by default */
-  height: 100%;
-  width: 60px; /* Adjust the width as needed */
-  background-color: #333; /* Change the background color as needed */
-  z-index: 1000; /* Ensure sidebar appears above other sections */
-  transition: left 0.3s ease; /* Add smooth transition for sidebar movement */
-  color: transparent; /* Hide text by default */
-}
-
-/* Adjust sidebar position on hover */
-.side-panel:hover {
   left: 0;
+  width: 60px; /* Adjust initial width */
+  height: 100%;
+  background-color: #333; /* Adjust background color as needed */
+  z-index: 1000;
+  overflow: hidden; /* Hide overflow content */
+  transition: width 0.3s ease; /* Add smooth transition for width change */
 }
 
-/* Change text color to white when sidebar is hovered */
+/* Adjust the width of the sidebar when hovered */
 .side-panel:hover {
-  color: #fff;
+  width: 200px; /* Adjust expanded width */
+}
+
+/* Show text container for consistent layout */
+.side-panel a span {
+  opacity: 0; /* Hide text by default */
+  transition: opacity 0.3s ease; /* Add smooth transition for opacity change */
+}
+
+/* Adjust the opacity of text container when sidebar is hovered */
+.side-panel:hover a span {
+  opacity: 1; /* Show text when sidebar is hovered */
 }
 
 /* Styles for the navigation links */
@@ -73,51 +79,47 @@ body {
   list-style: none;
 }
 
-.side-panel ul ul {
-  display: none; /* Hide submenus by default */
-}
-
-.side-panel ul ul li {
+.side-panel ul li {
   position: relative;
 }
 
-.side-panel ul ul li:hover {
-  background-color: #555; /* Background color for submenu items on hover */
+.side-panel ul li:hover {
+  background-color: #555; /* Adjust background color on hover */
 }
 
-.side-panel ul ul li a {
-  display: block;
-  padding: 12px;
-  color: transparent; /* Make text transparent by default */
-  text-decoration: none;
-}
-
-.side-panel ul ul li:hover a {
-  color: #fff; /* Change text color on hover */
-}
-
-.side-panel > ul > li:hover > ul {
-  display: block; /* Show submenu on hover */
-  position: absolute;
-  top: 0;
-  left: 100%;
-}
-
-.side-panel a {
+.side-panel ul li a {
   display: block;
   padding: 12px;
   color: #fff; /* Adjust text color as needed */
   text-decoration: none;
 }
 
-.side-panel a:hover {
-  background-color: #555; /* Change the background color on hover */
+.side-panel ul ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #555; /* Adjust background color for submenus */
+}
+
+.side-panel ul ul li:hover {
+  background-color: #777; /* Adjust background color for submenu items on hover */
+}
+
+.side-panel ul ul li a {
+  color: #fff; /* Adjust text color for submenus */
+}
+
+.side-panel ul li:hover > ul {
+  display: block; /* Show submenu on hover */
 }
 
 /* Ensure content doesn't overlap with sidebar */
 #content {
   padding-left: 220px; /* Adjust to match expanded width of sidebar + some spacing */
 }
+
+/* Other existing CSS styles... */
 
 /* Hero section */
 .hero {
