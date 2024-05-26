@@ -43,7 +43,7 @@ body {
   background: #555;
 }
 
-/* Simplified CSS for the sidebar navigation */
+/* Styles for the sidebar navigation */
 .side-panel {
   position: fixed;
   top: 0;
@@ -53,15 +53,17 @@ body {
   background-color: #333; /* Change the background color as needed */
   z-index: 1000; /* Ensure sidebar appears above other sections */
   transition: left 0.3s ease; /* Add smooth transition for sidebar movement */
-}
-
-.side-panel.sticky {
-  position: fixed;
+  color: transparent; /* Hide text by default */
 }
 
 /* Adjust sidebar position on hover */
 .side-panel:hover {
   left: 0;
+}
+
+/* Change text color to white when sidebar is hovered */
+.side-panel:hover {
+  color: #fff;
 }
 
 /* Styles for the navigation links */
