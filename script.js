@@ -1,7 +1,4 @@
-// script.js
-
 window.addEventListener("scroll", function () {
-  console.log("Scrolling detected!");
   var sidebar = document.querySelector(".side-panel");
   var sticky = sidebar.offsetTop;
 
@@ -12,12 +9,14 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Set initial position
-var sidebar = document.querySelector(".side-panel");
-var sticky = sidebar.offsetTop;
+// Set initial position on page load
+document.addEventListener("DOMContentLoaded", function () {
+  var sidebar = document.querySelector(".side-panel");
+  var sticky = sidebar.offsetTop;
 
-if (window.pageYOffset >= sticky) {
-  sidebar.classList.add("sticky");
-} else {
-  sidebar.classList.remove("sticky");
-}
+  if (window.pageYOffset >= sticky) {
+    sidebar.classList.add("sticky");
+  } else {
+    sidebar.classList.remove("sticky");
+  }
+});

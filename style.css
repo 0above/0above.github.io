@@ -48,46 +48,42 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px; /* Adjust the width of the sidebar navigation box */
+  width: 40px; /* Initial width */
   height: 100%;
-  background-color: #333; /* Adjust background color as needed */
+  background-color: #333; /* Sidebar background color */
   z-index: 1000;
-  overflow: hidden; /* Hide overflow content */
-  transition: width 0.3s ease; /* Add smooth transition for width change */
+  overflow: hidden;
+  transition: width 0.3s ease; /* Smooth transition for width change */
 }
 
-/* Adjust the width of the sidebar when hovered */
 .side-panel:hover {
-  width: 200px; /* Adjust expanded width */
+  width: 200px; /* Expanded width */
 }
 
-/* Show text container for consistent layout */
+/* Sidebar links */
 .side-panel a {
   display: block;
   padding: 12px;
-  color: #fff; /* Adjust text color as needed */
+  color: #fff; /* Link text color */
   text-decoration: none;
-  position: relative; /* Ensure positioning context */
+  position: relative;
 }
 
 .side-panel a span {
   display: inline-block;
-  width: 120px; /* Adjust width of text container */
+  width: 120px; /* Width of text container */
   opacity: 0; /* Hide text by default */
-  transition: opacity 0.3s ease; /* Add smooth transition for opacity change */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
 
-/* Adjust the opacity of text container when sidebar is hovered */
 .side-panel:hover a span {
   opacity: 1; /* Show text when sidebar is hovered */
 }
 
-/* Completely hide text when sidebar is not fully expanded */
 .side-panel:not(:hover) a span {
-  opacity: 0; /* Hide text when sidebar is not fully expanded */
+  opacity: 0; /* Hide text when sidebar is not hovered */
 }
 
-/* Styles for the navigation links */
 .side-panel ul {
   margin: 0;
   padding: 0;
@@ -95,44 +91,43 @@ body {
 }
 
 .side-panel ul li {
-  position: relative; /* Ensure relative positioning for submenu */
+  position: relative; /* Position context for submenu */
 }
 
 .side-panel ul ul {
   display: none;
-  position: absolute; /* Change to absolute positioning */
+  position: absolute;
   top: 0;
-  left: 100%; /* Position the submenu to the right of its parent */
-  background-color: #555; /* Adjust background color for submenus */
+  left: 100%; /* Position submenu to the right */
+  background-color: #555; /* Submenu background color */
   z-index: 999; /* Ensure submenus appear above other content */
 }
 
 .side-panel ul li:hover > ul {
-  display: block; /* Show submenu on parent hover */
+  display: block; /* Show submenu on hover */
 }
 
 .side-panel ul li:hover {
-  background-color: #555; /* Adjust background color on hover */
+  background-color: #555; /* Background color on hover */
 }
 
 .side-panel ul li a {
-  display: block;
   padding: 12px;
-  color: #fff; /* Adjust text color as needed */
+  color: #fff;
   text-decoration: none;
 }
 
 .side-panel ul ul li:hover {
-  background-color: #777; /* Adjust background color for submenu items on hover */
+  background-color: #777; /* Submenu item background color on hover */
 }
 
 .side-panel ul ul li a {
-  color: #fff; /* Adjust text color for submenus */
+  color: #fff; /* Submenu text color */
 }
 
-/* Ensure content doesn't overlap with sidebar */
+/* Prevent content overlap */
 #content {
-  padding-left: 220px; /* Adjust to match expanded width of sidebar + some spacing */
+  padding-left: 220px; /* Adjust based on sidebar expanded width */
 }
 
 /* Hero section */
