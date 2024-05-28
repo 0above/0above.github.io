@@ -48,40 +48,39 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px; /* Initial width */
+  width: 20px;
   height: 100%;
-  background-color: #333; /* Sidebar background color */
+  background-color: #333;
   z-index: 1000;
   overflow: hidden;
-  transition: width 0.3s ease; /* Smooth transition for width change */
+  transition: width 0.3s ease;
 }
 
 .side-panel:hover {
-  width: 200px; /* Expanded width */
+  width: 200px;
 }
 
-/* Sidebar links */
 .side-panel a {
   display: block;
   padding: 12px;
-  color: #fff; /* Link text color */
+  color: #fff;
   text-decoration: none;
   position: relative;
 }
 
 .side-panel a span {
   display: inline-block;
-  width: 120px; /* Width of text container */
-  opacity: 0; /* Hide text by default */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  width: 120px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .side-panel:hover a span {
-  opacity: 1; /* Show text when sidebar is hovered */
+  opacity: 1;
 }
 
 .side-panel:not(:hover) a span {
-  opacity: 0; /* Hide text when sidebar is not hovered */
+  opacity: 0;
 }
 
 .side-panel ul {
@@ -91,43 +90,34 @@ body {
 }
 
 .side-panel ul li {
-  position: relative; /* Position context for submenu */
-}
-
-.side-panel ul ul {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 100%; /* Position submenu to the right */
-  background-color: #555; /* Submenu background color */
-  z-index: 999; /* Ensure submenus appear above other content */
-}
-
-.side-panel ul li:hover > ul {
-  display: block; /* Show submenu on hover */
+  position: relative;
 }
 
 .side-panel ul li:hover {
-  background-color: #555; /* Background color on hover */
-}
-
-.side-panel ul li a {
-  padding: 12px;
-  color: #fff;
-  text-decoration: none;
+  background-color: #555;
 }
 
 .side-panel ul ul li:hover {
-  background-color: #777; /* Submenu item background color on hover */
+  background-color: #777;
 }
 
 .side-panel ul ul li a {
-  color: #fff; /* Submenu text color */
+  color: #fff;
+}
+
+/* Hide submenus by default */
+.submenu-container {
+  display: none;
+}
+
+/* Show submenus when parent menu item is hovered over */
+.side-panel li:hover .submenu-container {
+  display: block;
 }
 
 /* Prevent content overlap */
 #content {
-  padding-left: 220px; /* Adjust based on sidebar expanded width */
+  padding-left: 220px;
 }
 
 /* Hero section */
